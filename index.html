@@ -452,9 +452,12 @@
             <div class="btn-box formBtn">
                 <button type="submit" class="btn">Send Message</button>
             </div>
+
+            <input type="hidden" name="_captcha" value="false">
+            <input type="text" name="_honey" style="display:none">
         </form>
         -->
-        <form action="https://formsubmit.co/robertassaw2002@gmail.com" method="POST" class="scroll-bottom">
+        <form id="contactForm" action="https://formsubmit.co/robertassaw2002@gmail.com" method="POST" class="scroll-bottom">
           <input type="text" name="name" placeholder="Your Name" required>
           <input type="text" name="address" placeholder="Your Address" required>
           <input type="email" name="email" placeholder="Your Email" required>
@@ -465,6 +468,8 @@
           <div class="btn-box formBtn">
               <button type="submit" class="btn">Send Message</button>
           </div>
+
+          <p id="successMsg" style="display: none; color: green; margin-top: 1em;">✅ Message sent successfully!</p>
       </form>
       
     </section>

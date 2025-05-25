@@ -115,3 +115,37 @@ window.onscroll = () =>{
 
  const scrollTop = document.querySelectorAll(".scroll-top");
  scrollTop.forEach((el)=>observer.observe(el));
+
+
+
+
+//form-submission///////
+  const form = document.getElementById('contactForm');
+  const successMsg = document.getElementById('successMsg');
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault(); // Prevent normal form submission
+
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => {
+      if (response.ok) {
+        form.reset(); // Clear form
+        successMsg.style.display = 'block'; // Show success message
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
+    })
+    .catch(error => {
+      alert('Error sending message.');
+      console.error(error);
+    });
+  });
+
